@@ -1,0 +1,47 @@
+ul {list-style: none;}
+ul li, dl dd {padding: 10px 0;}
+hr {width: 100%;}
+.container {
+    text-align: center; 
+    width: 80%; 
+    margin: 0 auto;
+}
+.title {margin-bottom: 30px;}
+.title img {vertical-align: middle;}
+.title h2 {
+    display: inline-block;
+    margin: 5px 0 15px 0;
+    vertical-align: middle;
+    font-size: 35px;
+    color: orange;
+}
+.tag {
+    position: relative;
+    top: 17px;
+    padding: 0 10px;
+    background-color: white;
+}
+.nowWeather, .futureWeather {
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 10px;
+}
+.orange {color: orange;}
+.temperature{font-size: 35px;}
+.item {
+    display: inline-block;
+    width: 15%;
+    background-color: #00bdff;
+    color: white;
+    margin: 8.5px;
+}
+@media screen and (max-width:1354px){
+    .item {
+        width: 289px;
+    }
+}
+.futureWeather {
+    box-sizing: border-box;
+}
+

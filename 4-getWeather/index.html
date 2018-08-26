@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>getWeather</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_809148_i0avfp2jhyk.css"> 
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="container">
+    <div class="title"> 
+        <img src="img/loginlogo.png" alt="">
+        <h2>天气应用</h2>      
+    </div>
+    <span class="tag">今日天气</span>
+    <hr>
+    <div class="nowWeather">      
+        <select id="prov"></select>
+        <select id="city"></select>
+        <ul>
+            <li><span class="temperature orange">请选择城市</span>&nbsp;&nbsp;&nbsp;<span class="weather"></span></li>
+            <li><i class="iconfont icon-shidu"></i>&nbsp;&nbsp;&nbsp;湿度：<span class="orange" id="humidity"></span></li>
+            <li><i class="iconfont icon-chuanyizhishu"></i>&nbsp;&nbsp;&nbsp;穿衣指数：<span class="orange" id="dressingAdvice"></span></li>
+            <li><i class="iconfont icon-xichezhishu"></i>&nbsp;&nbsp;&nbsp;洗车指数：<span class="orange" id="wash_index"></span></li>
+            <li><i class="iconfont icon-lvxing"></i>&nbsp;&nbsp;&nbsp;旅行指数：<span class="orange" id="travel_index"></span></li>
+            <li><i class="iconfont icon-yundongzhishu"></i>&nbsp;&nbsp;&nbsp;锻炼指数：<span class="orange" id="exercise_index"></span></li>
+            <li><i class="iconfont icon-ziwaixian"></i>&nbsp;&nbsp;&nbsp;紫外线指数：<span class="orange" id="uv_index"></span></li>
+        </ul>
+    </div>
+    <span class="tag">未来6日天气</span>
+    <hr>
+    <div class="futureWeather">
+    </div>
+</div>
+<script src="http://res.42du.cn/vendor/jquery/jquery.min.js"></script>
+<script src="index.js"></script>
+<script>
+</script>
+</body>
+</html>
