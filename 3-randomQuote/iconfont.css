@@ -1,0 +1,23 @@
+/* 双引号 */
+@font-face {
+  font-family: 'iconfont';  /* project id 808917 */
+  src: url('http://at.alicdn.com/t/font_808917_qreydq5rbd.eot');
+  src: url('http://at.alicdn.com/t/font_808917_qreydq5rbd.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_808917_qreydq5rbd.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_808917_qreydq5rbd.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_808917_qreydq5rbd.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-shuangyinhao:before { 
+  content: "\e6b8";  
+  font-family:"iconfont" !important;
+}
+
+<i class="iconfont">&#xe66a;</i>
+<p class="quote icon-shuangyinhao"></p>

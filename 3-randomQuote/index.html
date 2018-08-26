@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>random quote</title>
+    <link rel="stylesheet" href="iconfont.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_808917_rais7893e6p.css">
+    <style>
+        body {
+            background-color: #333;
+            color: #333;
+        }
+        a {
+            display: inline-block;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: #333;
+            color: white;
+            text-decoration: none; 
+        }
+        .quote {
+            line-height: 42px;
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+        }
+        .icon-shuangyinhao:before {
+            font-size: 35px;
+            margin-right: 10px;
+        }
+        .author {
+            text-align: right;
+            margin-right: 30px;
+        }
+        .newQuote {
+            float:right;
+        }
+        .panel {
+            width: 500px;
+            margin: 10% auto 0 auto;
+            padding: 50px;
+            background-color: white;
+        }
+        .designer {
+            text-align: center;
+            color: white;
+        }
+        .share img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <p class="quote icon-shuangyinhao"></p>
+        <p class="author">——</p>
+        <a class="share" href="#"><i class="iconfont">&#xe619;</i></a>
+        <a class="share" href="#"><i class="iconfont">&#xe60f;</i></a>
+        <a class="newQuote" href="#">New quote</a>
+    </div>
+    <footer>
+        <p class="designer">by Mr.zhang</p>
+    </footer>
+    <script src="one.json"></script> 
+    <script>
+        function setRandom(min, max) {
+            return Math.floor(Math.random()*(max - min + 1) + min);
+        }
+        var body = document.querySelector('body');
+        var aList = document.querySelectorAll('a'); 
+        var author = document.querySelector('.author');
+        var quote = document.querySelector('.quote');
+        var panel = document.querySelector('.panel');
+
+        function gradientChange(object, time, show = true){
+            if (show) {
+                var opacity = 1;
+                object.style.opacity = opacity;
+                var changeId = setInterval(function() {
+                    opacity -= 0.1;
+                    opacity = Number(opacity.toFixed(1));//toFixed返回的函数是字符串 '-'影响小
+                    object.style.opacity = opacity;
+                    if (opacity === 0) {
+                        clearInterval(changeId);
+                    }
+                }, time); 
+            } else {
+                var opacity = 0;
+                object.style.opacity = opacity;
+                var changeId = setInterval(function() {
+                    opacity += 0.1;
+                    opacity = Number(opacity.toFixed(1));//toFixed返回的函数是字符串 '+'影响大
+                    object.style.opacity = opacity;
+                    if (opacity === 1) {
+                        clearInterval(changeId);
+                    }
+                }, time);
+            }
+        }
+        function changeQuote() {
+            var mydata = JSON.parse(data); 
+            var id = setRandom(0, 4)
+            quote.innerHTML = mydata[id]["quote"];
+            author.innerHTML = "——" + mydata[id]["author"];
+            gradientChange(quote, 100, false);
+            gradientChange(author, 100, false);
+        }
+        setTimeout(changeQuote,2000);
+        function changeBgColor() {
+            var bgColor = "rgb("+setRandom(0, 255)+", "+setRandom(0, 255)+", "+setRandom(0, 255)+")";
+            body.style.backgroundColor = bgColor;
+            panel.style.color = bgColor;
+            for (var i = 0; i < aList.length; i++) {
+                aList[i].style.backgroundColor = bgColor;
+            }
+            gradientChange(quote, 30, true);
+            gradientChange(author, 30, true);
+            setTimeout(changeQuote, 800);
+        }
+        aList[2].addEventListener('click', changeBgColor);
+        /* 分享到qq空间或者新浪微博 */
+        function shareToXl(title,url,picurl){
+            var sharesinastring='http://v.t.sina.com.cn/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url+'&pic='+picurl;
+            window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
+        }
+        function shareToQq(title,url,picurl){
+            var shareqqzonestring='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?summary='+title+'&url='+url+'&pics='+picurl;
+            window.open(shareqqzonestring,'newwindow','height=400,width=400,top=100,left=100');
+        }
+        aList[0].addEventListener('click', function() {
+            shareToXl(quote.textContent,"http://www.baidy.com",null)
+        })
+
+        aList[1].addEventListener('click', function() {
+            shareToQq(quote.textContent,"http://www.baidy.com",null)
+        });
+    </script>
+ 
+</body>
+</html>
