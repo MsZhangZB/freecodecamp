@@ -80,6 +80,7 @@
         var panel = document.querySelector('.panel');
 
         function gradientChange(object, time, show = true){
+            aList[2].removeEventListener('click', changeBgColor);
             if (show) {
                 var opacity = 1;
                 object.style.opacity = opacity;
@@ -100,6 +101,7 @@
                     object.style.opacity = opacity;
                     if (opacity === 1) {
                         clearInterval(changeId);
+                        aList[2].addEventListener('click', changeBgColor);
                     }
                 }, time);
             }
@@ -124,7 +126,9 @@
             gradientChange(author, 30, true);
             setTimeout(changeQuote, 800);
         }
-        aList[2].addEventListener('click', changeBgColor);
+
+        
+        
         /* 分享到qq空间或者新浪微博 */
         function shareToXl(title,url,picurl){
             var sharesinastring='http://v.t.sina.com.cn/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url+'&pic='+picurl;
@@ -135,11 +139,11 @@
             window.open(shareqqzonestring,'newwindow','height=400,width=400,top=100,left=100');
         }
         aList[0].addEventListener('click', function() {
-            shareToXl(quote.textContent,"http://www.baidy.com",null)
+            shareToXl(quote.textContent,window.location.href,null)
         })
 
         aList[1].addEventListener('click', function() {
-            shareToQq(quote.textContent,"http://www.baidy.com",null)
+            shareToQq(quote.textContent,window.location.href,null)
         });
     </script>
  
