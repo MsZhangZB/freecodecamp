@@ -1,3 +1,4 @@
+body {background-color: white;}
 ul {list-style: none;}
 ul li, dl dd {padding: 10px 0;}
 hr {width: 100%;}
@@ -30,15 +31,21 @@ hr {width: 100%;}
 .orange {color: orange;}
 .temperature{font-size: 35px;}
 .item {
+    box-sizing: border-box;
     display: inline-block;
     width: 15%;
     background-color: #00bdff;
     color: white;
     margin: 8.5px;
 }
-@media screen and (max-width:1354px){
+@media screen and (max-width: 1316px){
     .item {
-        width: 289px;
+        width: calc(33% - 20px);
+    }
+}
+@media screen and (max-width: 991px){
+    .item {
+        width: calc(100% - 20px);
     }
 }
 .futureWeather {
