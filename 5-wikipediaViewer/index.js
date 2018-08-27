@@ -18,10 +18,13 @@ $(document).ready(function() {
             $('.container').empty();
             $('.tips').hide();
             var keyword = $('#rearch').val();
-            var url = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" + keyword + "&explaintext&prop=info&inprop=url&utf8=&format=json";
+            var url = "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=keyword&explaintext&prop=info&inprop=url&utf8=&format=json";
             $.ajax({
                 url: url,
                 type: 'POST',
+                data: {
+                    "srsearch": keyword,
+                },
                 dataType: "jsonp",
                 headers: { 'Api-User-Agent': 'Example/1.0' },
                 success:function(data){
@@ -32,7 +35,7 @@ $(document).ready(function() {
                         var endTag = '<p>' + val.snippet +'</p></a>';  
                         $('.container').append(firstTag + spanTag + endTag);
                     });   
-                    $(".infoitem:first-child").animate({marginTop:'30px'},"slow");
+                    $(".infoitem:first-child").animate({marginTop:'30px'}, 200);
                 },  
                 error:function(){
                     //获取出错了
