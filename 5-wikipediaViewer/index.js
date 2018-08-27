@@ -37,9 +37,9 @@ $(document).ready(function() {
                     });   
                     $(".infoitem:first-child").animate({marginTop:'30px'}, 200);
                 },  
-                error:function(){
+                error:function(jqXHR){
                     //获取出错了
-                    alert("Sorry,there's something wrong within the search,please refresh this page and try again!");
+                    alert('error code:' + jqXHR.status);
                 }
             });
 
