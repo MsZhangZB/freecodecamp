@@ -1,0 +1,22 @@
+#main {
+	display: flow-root;/*BFC消除子元素与父元素的margin-rop合并的问题*/
+	color: #333;
+	text-align: center;
+	background-color: #eee;
+	padding: 0 10%;
+}
+#img-div {margin: 20px auto;}
+#img-div img {
+	display: block;
+	max-width: 3008px;
+}
+#tribute-info ul {text-align: left;}
+.infos {
+	margin: 15px 0; 
+	line-height: 25px;
+}
+.infos time {font-weight: bold;}
+#more-info {
+	margin: 45px 0; 
+	font-weight: bold;
+}
