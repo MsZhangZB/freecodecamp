@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+	<meta charset="UTF-8">
+	<title>surveyFrom</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<main>
+		<h1 id="title">Survey　Form</h1>
+		<form id="survey-form">
+			<p id="description">让我知道你更多的需求,我们准备创建一个全新的社团</p>
+			<div class="info-items">
+				<label id="name-label" for="name">*姓名：</label>
+				<input type="text" name="name" id="name" required placeholder="Enter you name">
+			</div>
+			<div class="info-items">
+				<label id="email-label" for="email">*邮箱：</label>
+				<input type="email" name="email" id="email" required placeholder="Enter you email">
+			</div>
+			<div class="info-items">
+				<label id="number-label" for="age">*年龄：</label>
+				<input type="number" name="age" id="number" min="1" max="120" required placeholder="Enter you age">
+			</div>	
+			<div class="info-items">
+				<label for="dropdown">请问您在校园中的角色?</label>
+				<select id="dropdown">
+					<option disabled="false">请选择</option>
+					<option>学生</option>
+					<option>老师</option>
+					<option>其他</option>
+				</select>
+			</div>
+			<div class="info-items">
+				<label>* 是否有必要创建一个面向在校所有人人员的兴趣社团呢？</label>
+				<div class="chooseBtn">
+					<input type="radio" name="is-not" id="is" required value="true"><label class="clearFix" for="is">是</label><br>
+					<input type="radio" name="is-not" id="not" required value="false"><label class="clearFix" for="not">否</label>
+				</div>
+			</div>	
+			<div class="info-items">
+				<label>如果上题选择是请选择您的兴趣爱好:</label>
+				<div  class="chooseBtn">
+					<input type="checkbox" id="hobby-1" value="1"><label class="clearFix" for="hobby-1">篮球</label><br>
+					<input type="checkbox" id="hobby-2" value="2"><label class="clearFix" for="hobby-2">羽毛球</label><br>
+					<input type="checkbox" id="hobby-3" value="3"><label class="clearFix" hidden="" for="hobby-3">跆拳道</label><br>
+					<input type="checkbox" id="hobby-4" value="4"><label class="clearFix" for="hobby-4">动漫</label>
+				</div>
+			</div>
+			<div class="info-items">
+				<label>你对此次问卷有其他建议或者对有什么新的想法请补充，谢谢您！</label>
+				<textarea placeholder="enter your comment here"></textarea>
+			</div>
+			<button type="submit" id="submit">提交</button>
+			<div ></div>
+		</form>
+	</main>
+</body>
+<script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</html>

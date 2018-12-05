@@ -1,0 +1,73 @@
+
+/*清楚radio与checkbox对应label的样式*/body {background-color: #a9d7d1}
+h1 {text-align: center;}
+#survey-form {
+	display: flow-root;
+	margin: 0 auto;
+	width: 60%;
+	min-width: 212px;
+	background-color: #fff;
+}
+#description {text-align: center;}
+label {
+	display: inline-block;
+	padding: 8.5px 0;
+	width: 50%;
+	text-align: right;
+}
+@media screen and (max-width: 619px) {
+	#survey-form {
+		width: 80%;
+	}
+  label {
+		display: block;
+		width: auto;
+		text-align: left;
+	}
+}
+@media screen and (max-width: 719px) {
+	#survey-form {
+		width: 70%;
+	}
+}
+/*清楚radio与checkbox对应label的样式*/
+.clearFix {
+	display: inline-block;
+	width: auto;
+}
+.info-items{
+	margin: 25px 20px;
+}
+.chooseBtn {
+	display: inline-block;
+	vertical-align: top;
+}
+input{
+	width: 176px;
+	height: 32px;
+	vertical-align: middle;
+}
+input[type=radio],
+input[type=checkbox] {
+	width: auto;
+	min-width: auto;
+}
+#dropdown {
+	width: 180px;
+	height: 38px;
+}
+textarea {
+	width: 176px;
+	height: 52.5px;
+	resize:vertical;/*静止textarea横向拉动*/
+	vertical-align: top;
+}
+#submit {
+	margin: 20px calc(50% - 45px);
+	width: 90px;
+	height: 42px;
+	border-radius: 5px;
+	border-style: none;
+	color: white;
+	background-color: #59ace0;
+}
