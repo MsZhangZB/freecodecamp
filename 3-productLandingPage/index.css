@@ -43,9 +43,6 @@ input {border-style: none;}
 	align-items: center;
 }
 @media screen and (max-width: 790px){
-	#logo {
-		width: 35%;
-	} 
 	#nav-bar {
 		width: 60%;
 	}

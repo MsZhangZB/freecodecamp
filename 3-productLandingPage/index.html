@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<title>productLandingPage</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="index.css">
 	<style type="text/css">
 		#nav-bar ul {
 			display: flex;
@@ -13,15 +12,13 @@
 			align-items: center;
 		}
 		@media screen and (max-width: 790px){
-			#logo {
-				width: 35%;
-			} 
 			#nav-bar {
 				width: 60%;
 			}
 		}
-	/*style里面的代码是为了消除单元测试的问题 (这是强迫症吗？)*/
+		/*style中的代码是为消除单元测试读取不到外部css的问题 出现的红色标记*/
 	</style>
+	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
 	<header id="header">
