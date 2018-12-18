@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>5-personalPortfolioPage</title>
+	<style type="text/css">
+		body, ul, li, nav{margin: 0; padding: 0}
+		a {text-decoration: none;}
+		body {text-align: center;} /*所有元素居中显示*/
+		/*navbar css*/
+		#navbar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			text-align: right;
+			background-color: #e0ebe8;
+		}
+		#navbar  li {
+			display: inline-block;
+			padding: 0 50px;
+		}
+		#navbar a {
+			display: block;
+			height: 63px;
+			line-height: 63px;
+			color: #008080;
+		}
+		/*welcome section css*/
+		#welcome-section {
+			display: flex; /*BFC 块级格式化 最新的属性*/
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #e0ebe8;
+		}
+		#welcome-section h1 {
+			text-align: center;
+		}
+		#welcome-section p {
+			color: green;
+		}
+		/*projects css*/
+		#projects {
+			margin-top: -63px;
+			padding-top: 63px;
+			color: #008080;
+		}
+		#projects header {
+			margin-top: 63px;
+			font-size: 1.2em;
+			font-weight: bolder;
+		}
+		.project-tile{
+			display: inline-block;
+			border: 2px solid lightblue;
+			margin: 40px 80px;
+			width: 250px;
+			height: 220px;
+			color: #008080;
+			font-size: 18px;
+			font-weight: bolder;
+		}
+		.project-tile:hover{
+			border-color: #98bac5;
+		}
+		.project-tile .img {
+			border-bottom: 2px solid lightblue;
+			width: 100%;
+			height: 180px;
+		}
+		/*profile-link css bind "show all"*/
+		#profile-link {
+			display: block;
+	    border: 2px solid #90C695;
+			border-radius: 5px;
+			margin: 20px auto 50px auto;
+			width: 150px;
+			height: 44px;
+			line-height: 44px;
+			background-color: #e0ebe8;
+			color: #008080;
+		}
+		#profile-link:hover {
+	    background-color: #E4F1FE;
+	    color: green;
+  	}
+  	/*contact css*/
+  	#contact {
+  		padding-bottom: 160px; 
+  		background-color: #C8F7C5;
+  	}
+  	#contact #header {
+  		padding: 160px 0 110px;
+  	}
+  	#contact .contact-items {
+  		display: inline-block;
+  		width: 100px;
+  		height: 100px;
+  		border: 2px solid #90C695;
+  		border-radius: 50%;
+  		margin: 0 40px 30px 40px;
+  		font-weight: bolder;
+  		line-height: 100px;
+  		background-color: #e0ebe8;
+  		color: #008080;
+  	}
+  	#contact .contact-items:hover {
+  		background-color: #E4F1FE;
+    	color: green;
+  	}
+  	/*footer css*/
+  	footer {
+			padding: 20px;
+			background-color: #22313F;
+			color: white;
+  	}
+  	footer a{
+			text-decoration: underline;
+			color: white;
+  	}
+  	/*screen max-width: 500px; css*/
+		@media screen and (max-width: 500px){
+			#navbar  li {
+				padding: 0 20px;
+			}
+			#welcome-section h1 {
+				font-size: 1.5em;
+			}
+			.project-tile {
+				margin: 40px 0px;  /*清楚左右的margin 否则会多出一部分*/
+			}
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul id="navbar">
+			<li><a href="#welcome-section">About Me</a></li>
+			<li><a href="#projects">Wrok</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav>
+	<div id="welcome-section">
+		<h1>Hey i'am Mr丶ZhangZB.</h1>
+		<p>a web developer</p>
+	</div>
+	<div id="projects">
+		<header>These are some of my projects..</header>
+		<a class="project-tile" href="https://freeheart.xyz/freecodecamp/1-tributePage/">
+			<img class="img" src="https://ws1.sinaimg.cn/large/6ca89370gy1fyaoijplx0j20tn0h4qf2.jpg">
+			<div>Tribute Page</div>
+		</a>
+		<a class="project-tile" href="https://freeheart.xyz/freecodecamp/5-wikipediaViewer/">
+			<img class="img" src="https://ws1.sinaimg.cn/large/6ca89370gy1fyaoijhn1jj20tn0h4t8l.jpg">
+			<div>WikipediaViewer Page</div>
+		</a>
+		<a class="project-tile" href="https://freeheart.xyz/freecodecamp/3-randomQuote/">
+			<img class="img" src="https://ws1.sinaimg.cn/large/6ca89370gy1fyaoijibngj20tn0h4t8u.jpg">
+			<div>RandomQuote Page</div>
+		</a>
+		<a class="project-tile" href="https://freeheart.xyz/freecodecamp/4-technicalDocumentationPage/">
+			<img class="img" src="https://ws1.sinaimg.cn/large/6ca89370gy1fyaoijj3r8j20tn0h40ty.jpg">
+			<div>JSdocumentation Page</div>
+		</a>
+		<a class="project-tile" href="https://freeheart.xyz/freecodecamp/3-productLandingPage/">
+			<img class="img" src="https://ws1.sinaimg.cn/large/6ca89370gy1fyaoijk1irj20tn0h4aaq.jpg">
+			<div>Product Page</div>
+		</a>
+		<a class="project-tile" href="https://freeheart.xyz/ife-2018/base/day12-15/">
+			<img class="img" src="https://ws1.sinaimg.cn/large/6ca89370gy1fyaoijn24hj20tn0h4ac7.jpg">
+			<div>ife-2018 Page</div>
+		</a>
+		<a href="https://github.com/MsZhangZB/freecodecamp" id="profile-link">Show all</a>
+	</div>
+	<div id="contact">
+		<div id="header">
+			<h2>Let's work together...</h2>
+			<p>How do you take your coffee?</p>
+		</div>
+		<a class="contact-items" href="https://www.cnblogs.com/Mszhang/">Cnblog</a>
+		<a class="contact-items" href="https://blog.csdn.net/qq_33443476">CSDN</a>
+		<a class="contact-items" href="https://github.com/MsZhangZB">Githuh</a>
+		<a class="contact-items" title="present,this is null" href="javascrtip:void(0)">Send a mail</a>
+		<a class="contact-items" title="present,this is null" href="javascrtip:void(0)">Call me</a>
+	</div>
+	<footer>
+		<p>**This is just a fake portfolio.. All the projects and contact details given are not real..</p>
+		<p>&copy;Created for <a href="https://github.com/MsZhangZB">Mr.Zhang</a></p>
+	</footer>
+</body>
+</html>
